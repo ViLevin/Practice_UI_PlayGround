@@ -13,14 +13,17 @@ public class ClickPage extends BasePage {
     @FindBy(id = "badButton")
     WebElement btnClickEvent;
 
-    public void clickBtn(){
-//        WebElement btn = driver.findElement(By.id("badButton"));
-//        btn.click();
 
+
+    public void clickBtn(){
+        //        WebElement btn = driver.findElement(By.id("badButton"));       - not relevant !
 //        btnClickEvent.click();
+
+//        btn.click();
 
         btnClickEvent.sendKeys(Keys.ENTER);
         JavascriptExecutor js = (JavascriptExecutor)driver;
-        js.executeScript()
+//        js.executeScript("document.querySelector('badButton').click()");
+        js.executeScript("arguments[0].click();", btnClickEvent);
     }
     }
